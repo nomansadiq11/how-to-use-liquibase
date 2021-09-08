@@ -19,11 +19,7 @@ services:
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "5050:80"
-  liquibase:
-    container_name: liquibase_containr
-    image: liquibase/liquibase
-    restart: always
-
-
-      
-      
+  # liquibase:
+  #   container_name: liquibase_containr
+  #   image: liquibase/liquibase
+  #   restart: always
