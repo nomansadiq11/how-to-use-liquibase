@@ -1,0 +1,10 @@
+ docker run  liquibase/liquibase:3.10 -v ~/liquibase/changelog/:/liquibase/changelog --url="jdbc:postgresql://172.20.0.2:5432/test_db?currentSchema=test_db" --changeLogFile=com/example/changelog.xml --username=root --password=root  update
+        
+  docker run --rm  
+  -v /removed/db/:/liquibase/changelog
+   -v /removed/lib:/liquibase/classpath 
+   liquibase/liquibase:3.10 
+   --classpath=changelog:classpath/groovy-2.5.9.jar:classpath/groovy-sql-2.5.9.jar:classpath/spring-core-5.2.4.RELEASE.jar:classpath/liquibase-groovy-dsl-2.1.2.jar 
+   --changeLogFile=master.groovy 
+   --url=jdbc:postgresql://removed:5432/removed?currentSchema=public 
+   --username=removed --password=password --logLevel=debug status
